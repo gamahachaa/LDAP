@@ -1,0 +1,10 @@
+{
+  "name": "LDAP",
+  "url" : "https://github.com/byFd/LDAP/",
+  "license": "MIT",
+  "tags": ["php", "ldap"],
+  "description": "LDAP wrapper for php target.",
+  "version": "1.0.0-alpha",
+  "releasenote": "Initial release, basic functionality (bind, search, get_entries)",
+  "contributors": ["byFd"]
+}
