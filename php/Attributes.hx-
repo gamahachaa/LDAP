@@ -1,0 +1,112 @@
+package php;
+
+/**
+ * ...
+ * @author bb
+ */
+ @:forward(toLowerCase)
+ enum abstract Attributes(String) from String to String
+{
+	var accountExpires;
+	var altRecipient;
+	var ArchiveName;
+	var authOrig;
+	var c;
+	var cn;
+	var co;
+	var company;
+	var countryCode;
+	var deletedItemFlags;
+	var delivContLength;
+	var deliverAndRedirect;
+	var department;
+	var description;
+	var displayName;
+	var displayNamePrintable;
+	var distinguishedName;
+	var division;
+	var facsimileTelephoneNumber;
+	var garbageCollPeriod;
+	var givenName;
+	var GroupMemberObjectId;
+	var homeDirectory;
+	var homeDrive;
+	var homePhone;
+	var info;
+	var initials;
+	var InPlaceArchive;
+	var ipPhone;
+	var l;
+	var LitigationHoldDuration;
+	var LitigationHoldEnabled;
+	var mail;
+	var mailNickName;
+	var managedBy;
+	var manager;
+	var managerCanUpdateMembers;
+	var mDBOverHardQuotaLimit;
+	var mDBOverQuotaLimit;
+	var mDBStorageQuota;
+	var mDBuseDefaults;
+	var memberOf;
+	var mobile;
+	var msExchAdminGroup;
+	var msExchHideFromAddressLists;
+	var msExchHomeServerName;
+	var msExchOmaAdminWirelessEnable;
+	var msExchPoliciesExcluded;
+	var msExchRecipLimit;
+	var msExchRequireAuthToSendTo;
+	var msExchUserCulture;
+	var name;
+	var O365HiddenFromAddressListsEnabled;
+	var O365Manager;
+	var O365userPrincipalName;
+	var pager;
+	var password;
+	var physicalDeliveryOfficeName;
+	var postalCode;
+	var postOfficeBox;
+	var preventDeletion;
+	var primaryGroupID;
+	var profilePath;
+	var protocolSettings;
+	var proxyAddresses;
+	var publicDelegates;
+	var removememberOf;
+	var removeproxyAddresses;
+	var sAMAccountName;
+	var scriptPath;
+	var SimpleDisplayName;
+	var sn;
+	var st;
+	var streetAddress;
+	var submissionContLength;
+	var targetAddress;
+	var telephoneNumber;
+	var thumbnailPhoto;
+	var title;
+	var tsAllowLogon;
+	var tsBrokenTimeOutSettings;
+	var tsDeviceClientDefaultPrinter;
+	var tsDeviceClientDrives;
+	var tsDeviceClientPrinters;
+	var tsHomeDir;
+	var tsHomeDirDrive;
+	var tsInheritInitialProgram;
+	var tsIntialProgram;
+	var tsProfilePath;
+	var tsReConnectSettings;
+	var tsShadowSettings;
+	var tsTimeOutSettingsConnections;
+	var tsTimeOutSettingsDisConnections;
+	var tsTimeOutSettingsIdle;
+	var tsWorkingDir;
+	var unauthOrig;
+	var userAccountControl;
+	var userPrincipalName;
+	var userWorkstations;
+	var waadLicenseInfo;
+	var wWWHomePage;
+
+}

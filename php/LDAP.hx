@@ -41,7 +41,7 @@ class LDAP
 		}
 		else{
 			#if debug
-			trace("LDAP is installed");
+			//trace("LDAP is installed<br/>");
 			#end
 		}
 	}
@@ -57,17 +57,18 @@ class LDAP
 			{
 				//Attempt Anonymous bind
 				success = Syntax.code("ldap_bind({0})", connection);
+				//trace(success);
 			}
 			else {
 
 				success = Syntax.code("ldap_bind({0}, {1}, {2})", connection, user, password);
-
+				//trace(success);
 			}
 		}
 		catch ( e:Dynamic  )
 		{
 			#if debug
-			trace(e);
+			//trace(e);
 			#end
 			return false;
 		}
@@ -122,13 +123,16 @@ class LDAP
 	{
 		return Syntax.strictEqual(Syntax.code("ldap_free_result({0},{1})", connection, result), true);
 	}
-
+    public function get_attributes(entries:Dynamic):NativeAssocArray<Dynamic>
+	{
+		return Syntax.code("ldap_get_attributes ({0},{1})", connection, entries);
+	}
 	public function get_entries(result : Dynamic)
 	{
 		/** kept from original for compatibilty */
-		return Lib.hashOfAssociativeArray(Syntax.code("ldap_get_entries({0},{1})", connection, result));
+		//return Lib.hashOfAssociativeArray(Syntax.code("ldap_get_entries({0},{1})", connection, result));
 		/** if it makes more sense to keep all native inside and deal with mapping data outside uncomment the line below and comment the above*/
-		//return Syntax.code("ldap_get_entries({0},{1})", connection, result);
+		return Syntax.code("ldap_get_entries({0},{1})", connection, result);
 	}
 
 	public function get_option(option : Int) : Dynamic
@@ -156,6 +160,7 @@ class LDAP
 		{
 			deref = LDAPDeref.NEVER;
 		}
+	
 		return Syntax.code("ldap_list({0},{1},{2},{3},{4},{5},{6},{7})", connection, base_dn, filter, attributes, attributes_only, size_limit, time_limit, deref);
 	}
 
@@ -174,6 +179,7 @@ class LDAP
 
 	public function search(base_dn : String, filter : String, ?attributes : NativeArray, attributes_only : Int = 0, size_limit : Int = 0, time_limit : Int = 0, ?deref : Int) : Dynamic
 	{
+		
 		if (attributes == null)
 		{
 			attributes = new NativeArray();
@@ -182,6 +188,8 @@ class LDAP
 		{
 			deref = LDAPDeref.NEVER;
 		}
+
+		//return Syntax.code("ldap_search({0},{1},{2})", connection, base_dn, filter);
 		return Syntax.code("ldap_search({0},{1},{2},{3},{4},{5},{6},{7})", connection, base_dn, filter, attributes, attributes_only, size_limit, time_limit, deref);
 	}
 
