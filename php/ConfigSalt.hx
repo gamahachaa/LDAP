@@ -103,7 +103,7 @@ class ConfigSalt implements IConfigSalt
 		dn = 'OU=Users,OU=Domain-Users,DC=ad,DC=salt,DC=ch';
 		disabled_dn = "OU=Domain-Disabled-Objects,DC=ad,DC=salt,DC=ch";
 		server = "10.192.114.241";
-		port = 389;
+		port = 636;
 		domain = "salt";
 		version = 3;
 		opt_referrals = 0;

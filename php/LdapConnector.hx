@@ -44,7 +44,7 @@ class LdapConnector extends LDAP
 		//ldap = new LDAP();
 		is_conected = this.connect(config.server, config.port);
 		#if debug
-		Lib.dump("Is connected : " + is_conected);
+		//Lib.dump("Is connected : " + is_conected);
 		#end
 		this.set_option( LDAPOpt.PROTOCOL_VERSION, config.version);
 		this.set_option( LDAPOpt.REFERRALS, config.opt_referrals );
